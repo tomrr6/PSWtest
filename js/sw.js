@@ -13,3 +13,12 @@ self.addEventListener('install', function(e) {
                 })
   );
 });
+
+// serve cached content when offline
+self.addEventListener('fetch', function(e) {
+  e.respondWith(
+    caches.match(e.request).then(funtion(response){
+                                 return response || fetch(e.request);
+    })
+);
+});

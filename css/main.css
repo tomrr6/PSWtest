@@ -11,3 +11,12 @@ html,
   padding: 0;
   width: 100%;
 }
+
+.container{
+  margn: auto;
+  text-align: center;
+}
+
+.title{
+  font-size: 3rem;
+}

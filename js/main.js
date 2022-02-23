@@ -1,7 +1,8 @@
-window.onLoad = () => {
-  'use strict';
-}
+// window.onLoad = () => {
+//   'use strict';
 
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('js/sw.js');
+function regSW(){
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
 }

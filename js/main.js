@@ -1,4 +1,4 @@
-windows.onLoad = () => {
+window.onLoad = () => {
   'use strict';
 }
 

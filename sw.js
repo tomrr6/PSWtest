@@ -18,19 +18,23 @@ var PRECACHE_URLS = [
   'sw.js'
 ];
 
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open(cacheName.then(funtion(cache) {
-                               return cache.addAll(filesToCache);
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(PRECACHE).then(funtion(cache) {
+                               return cache.addAll(PRECACHE_URLS);
                 })
   );
 });
 
+self.addEventListener('ativate', event => {
+  console.log('Service Worker Activating...');
+});
+
 // serve cached content when offline
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    caches.match(e.request).then(funtion(response){
-                                 return response || fetch(e.request);
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(funtion(response){
+                                 return response || fetch(event.request);
     })
 );
 });

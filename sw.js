@@ -20,7 +20,7 @@ var PRECACHE_URLS = [
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(PRECACHE).then(funtion(cache)) {
+    caches.open(PRECACHE).then(function(cache) {
                                return cache.addAll(PRECACHE_URLS);
                 })
   );
@@ -33,7 +33,7 @@ self.addEventListener('ativate', event => {
 // serve cached content when offline
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then(funtion(response){
+    caches.match(event.request).then(function(response){
                                  return response || fetch(event.request);
     })
 );

@@ -40,7 +40,7 @@
 	}],
   
   "lang" : "en-US",
-  "start-url" : "/PSWtest/index.html",
+  "start_url" : "/PSWtest/index.html",
   "display" : "standalone",
 	"prefer_related_applications" : false,
   "background_color" : "white",
